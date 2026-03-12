@@ -8,12 +8,12 @@ class Creature:
         self.defense = defense
         self.initiative_base = initiative_base
         self.degat = degat
-        self.type_degat = type_degat # Contondant, Tranchant, etc.
+        self.type_degat = type_degat
         self.actions = []
         self.etats = []
 
     def lancer_initiative(self):
-        # On simule un dé 20 + le score d'initiative de base
+        
         resultat = random.randint(1, 20) + self.initiative_base
         print(f"{self.nom} lance l'initiative : {resultat}")
         return resultat
