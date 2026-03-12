@@ -1,10 +1,11 @@
 import random
 
 class Creature:
-    def __init__(self, nom, description, pv, defense, initiative_base, degat, type_degat):
+    def __init__(self, nom, description, pv, pv_max , defense, initiative_base, degat, type_degat):
         self.nom = nom
         self.description = description
         self.pv = pv
+        self.pv_max = pv_max
         self.defense = defense
         self.initiative_base = initiative_base
         self.degat = degat
@@ -29,7 +30,8 @@ class Creature:
     def attaque(self, cible):
         print(f"{self.nom} attaque {cible.nom} et inflige {self.degat} dégâts ({self.type_degat}) !")
         cible.pv -= self.degat
-class Personnage(Creature):
+        
+class heros(Creature):
             
             def __init__(self, nom, description, pv, defense, initiative_base, degat, type_degat, arme):
                 super().__init__(nom, description, pv, defense, initiative_base, degat, type_degat)
@@ -40,7 +42,7 @@ class Personnage(Creature):
              super().afficher_caracteristiques()
              print(f"Arme : {self.arme} | Inventaire : {len(self.inventaire)} objets")
 
-class Monstre(Creature):
+class mechants(Creature):
     def __init__(self, nom, description, pv, defense, initiative_base, degat, type_degat):
         super().__init__(nom, description, pv, defense, initiative_base, degat, type_degat)
         self.resistances = []
