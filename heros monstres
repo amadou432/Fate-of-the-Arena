@@ -1,0 +1,57 @@
+import random
+
+class Creature:
+    def __init__(self, nom, description, pv, defense, initiative_base, degat, type_degat):
+        self.nom = nom
+        self.description = description
+        self.pv = pv
+        self.defense = defense
+        self.initiative_base = initiative_base
+        self.degat = degat
+        self.type_degat = type_degat # Contondant, Tranchant, etc.
+        self.actions = []
+        self.etats = []
+
+    def lancer_initiative(self):
+        # On simule un dé 20 + le score d'initiative de base
+        resultat = random.randint(1, 20) + self.initiative_base
+        print(f"{self.nom} lance l'initiative : {resultat}")
+        return resultat
+
+    def afficher_actions(self):
+        print(f"Actions de {self.nom} : {', '.join([a.nom for a in self.actions]) if self.actions else 'Aucune'}")
+
+    def afficher_caracteristiques(self):
+        print(f"--- {self.nom} ({self.type_degat}) ---")
+        print(f"PV: {self.pv} | CA: {self.defense}")
+        print(f"Description: {self.description}")
+
+    def attaque(self, cible):
+        print(f"{self.nom} attaque {cible.nom} et inflige {self.degat} dégâts ({self.type_degat}) !")
+        cible.pv -= self.degat
+        class Personnage(Creature):
+            def __init__(self, nom, description, pv, defense, initiative_base, degat, type_degat, arme):
+                super().__init__(nom, description, pv, defense, initiative_base, degat, type_degat)
+                self.arme = arme
+                self.inventaire = []
+
+    def afficher_caracteristiques(self):
+        super().afficher_caracteristiques()
+        print(f"Arme : {self.arme} | Inventaire : {len(self.inventaire)} objets")
+
+class Monstre(Creature):
+    def __init__(self, nom, description, pv, defense, initiative_base, degat, type_degat):
+        super().__init__(nom, description, pv, defense, initiative_base, degat, type_degat)
+        self.resistances = []
+
+    def afficher_caracteristiques(self):
+        super().afficher_caracteristiques()
+        print(f"Résistances : {', '.join(self.resistances) if self.resistances else 'Aucune'}")
+        class Action:
+            def __init__(self, nom, lanceur, cible):
+                self.nom = nom
+                self.lanceur = lanceur
+                self.cible = cible
+
+    def executer(self):
+        print(f"L'action {self.nom} est lancée par {self.lanceur.nom} sur {self.cible.nom} !")
