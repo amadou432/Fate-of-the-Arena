@@ -1,10 +1,11 @@
 import random
 
 class Creature:
-    def __init__(self, nom, description, pv, defense, initiative_base, degat, type_degat):
+    def __init__(self, nom, description, pv, pv_max , defense, initiative_base, degat, type_degat):
         self.nom = nom
         self.description = description
         self.pv = pv
+        self.pv_max = pv_max
         self.defense = defense
         self.initiative_base = initiative_base
         self.degat = degat
@@ -13,7 +14,7 @@ class Creature:
         self.etats = []
 
     def lancer_initiative(self):
-        
+
         resultat = random.randint(1, 20) + self.initiative_base
         print(f"{self.nom} lance l'initiative : {resultat}")
         return resultat
@@ -29,17 +30,19 @@ class Creature:
     def attaque(self, cible):
         print(f"{self.nom} attaque {cible.nom} et inflige {self.degat} dégâts ({self.type_degat}) !")
         cible.pv -= self.degat
-        class Personnage(Creature):
+        
+class heros(Creature):
+            
             def __init__(self, nom, description, pv, defense, initiative_base, degat, type_degat, arme):
                 super().__init__(nom, description, pv, defense, initiative_base, degat, type_degat)
                 self.arme = arme
                 self.inventaire = []
 
-    def afficher_caracteristiques(self):
-        super().afficher_caracteristiques()
-        print(f"Arme : {self.arme} | Inventaire : {len(self.inventaire)} objets")
+            def afficher_caracteristiques(self):
+             super().afficher_caracteristiques()
+             print(f"Arme : {self.arme} | Inventaire : {len(self.inventaire)} objets")
 
-class Monstre(Creature):
+class mechants(Creature):
     def __init__(self, nom, description, pv, defense, initiative_base, degat, type_degat):
         super().__init__(nom, description, pv, defense, initiative_base, degat, type_degat)
         self.resistances = []
@@ -47,11 +50,12 @@ class Monstre(Creature):
     def afficher_caracteristiques(self):
         super().afficher_caracteristiques()
         print(f"Résistances : {', '.join(self.resistances) if self.resistances else 'Aucune'}")
-        class Action:
+
+class Action:
             def __init__(self, nom, lanceur, cible):
                 self.nom = nom
                 self.lanceur = lanceur
                 self.cible = cible
 
-    def executer(self):
-        print(f"L'action {self.nom} est lancée par {self.lanceur.nom} sur {self.cible.nom} !")
+            def executer(self):
+             print(f"L'action {self.nom} est lancée par {self.lanceur.nom} sur {self.cible.nom} !")
