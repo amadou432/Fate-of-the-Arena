@@ -1,6 +1,10 @@
 import random
 
+<<<<<<< HEAD
 Heros = [
+=======
+heros = [
+>>>>>>> db36dcabb8c7ba9bb32c78af685a91fd67d72a67
     {
         "nom": "Goku",
         "description": "Guerrier Saiyan légendaire, défenseur de la Terre aux pouvoirs infinis.",
@@ -213,3 +217,9 @@ def attaque_classique(attaquant, cible,jet):
     else:
         print("L'attaque échoue.")
 
+<<<<<<< HEAD
+=======
+jet=lancer_des(1,20)
+
+attaque_classique(heros[0],mechants[0],jet)
+>>>>>>> db36dcabb8c7ba9bb32c78af685a91fd67d72a67
