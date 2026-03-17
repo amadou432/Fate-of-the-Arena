@@ -11,7 +11,8 @@ heros = [
         "typeDegats": "foudre",
         "etat": "normal",
         "tours_etat": 0,
-        "degats": (3, 10)
+        "degats": (3, 10),
+        "resistances": ["contondant"]
     },
     {
         "nom": "Gohan",
@@ -22,7 +23,9 @@ heros = [
         "actions": ["Masenko"],
         "typeDegats": "foudre",
         "etat": "normal",
-        "tours_etat": 0
+        "tours_etat": 0,
+        "degats": (2, 10),
+        "resistances": ["contondant"]
     },
     {
         "nom": "Vegeta",
@@ -33,7 +36,9 @@ heros = [
         "actions": ["Final Flash"],
         "typeDegats": "foudre",
         "etat": "normal",
-         "tours_etat": 0,
+        "tours_etat": 0,
+        "degats": (3, 10),
+        "resistances": ["contondant", "tranchant"]  
     },
     {
         "nom": "Piccolo",
@@ -44,7 +49,9 @@ heros = [
         "actions": ["Canon Makankosappo"],
         "typeDegats": "magie",
         "etat": "normal",
-         "tours_etat": 0,
+        "tours_etat": 0,
+        "degats": (2, 8),
+        "resistances": ["poison", "magie"]  
     },
     {
         "nom": "Trunks",
@@ -53,10 +60,28 @@ heros = [
         "defense": 17,
         "initiative": 18,
         "actions": ["Burning Attack"],
+        "typeDegats": "tranchant",
+        "etat": "normal",
+        "tours_etat": 0,
+        "degats": (3, 10),
+        "resistances": ["contondant", "tranchant"]  
+    },
+    {
+        "nom": "Goten",
+        "description": "Fils cadet de Goku, prodige Saiyan et meilleur ami de Trunks.",
+        "pv": 320,
+        "defense": 15,
+        "initiative": 17,
+        "actions": ["Kamehameha Jr", "Frappe Ki"],
         "typeDegats": "foudre",
         "etat": "normal",
-         "tours_etat": 0,
+        "tours_etat": 0,
+        "degats": (2, 10),
+        "resistances": ["contondant"],
+        "peut_fusionner": True,
+        "partenaire_fusion": "Trunks"
     },
+    
     {
         "nom": "Krilin",
         "description": "Meilleur ami humain de Goku, maître du Destructo Disk et du Kamehameha.",
@@ -64,10 +89,27 @@ heros = [
         "defense": 13,
         "initiative": 16,
         "actions": ["Destructo Disk"],
-        "typeDegats": "foudre",
+        "typeDegats": "tranchant",
         "etat": "normal",
-         "tours_etat": 0,
+        "tours_etat": 0,
+        "degats": (2, 6),
+        "resistances": []  
     },
+    {
+    "nom": "Gotenks",
+    "description": "Fusion légendaire de Trunks et Goten, puissance démultipliée et caractère imprévisible.",
+    "pv": 350 + 320 + 200,        
+    "defense": max(17, 15) + 5,   
+    "initiative": max(18, 17) + 3, 
+    "actions": ["Kamehameha Jr"],
+    "typeDegats": "foudre",
+    "etat": "normal",
+    "tours_etat": 0,
+    "degats": (4, 12),            
+    "resistances": ["contondant", "tranchant"],  
+    "peut_fusionner": False,
+    "duree_fusion": 5             
+    }
 ]
 
 mechants = [
@@ -81,20 +123,21 @@ mechants = [
         "typeDegats": "foudre",
         "etat": "normal",
         "tours_etat": 0,
-        "degats": (3, 10)
-        
-
+        "degats": (4, 12),
+        "resistances": ["contondant", "tranchant", "percant"] 
     },
     {
         "nom": "Freezer",
         "description": "Empereur galactique tyrannique, destructeur de la planète Vegeta.",
         "pv": 520,
-        "defense": 20,
+        "defense": 10,
         "initiative": 18,
         "actions": ["Death Beam"],
         "typeDegats": "glace",
         "etat": "normal",
-        "tours_etat": 0
+        "tours_etat": 0,
+        "degats": (3, 12),
+        "resistances": ["tranchant", "percant", "glace"]  
     },
     {
         "nom": "Cell",
@@ -105,8 +148,9 @@ mechants = [
         "actions": ["Kamehameha Solaire"],
         "typeDegats": "poison",
         "etat": "normal",
-        "tours_etat": 0
-
+        "tours_etat": 0,
+        "degats": (3, 10),
+        "resistances": ["poison", "feu"]  
     },
     {
         "nom": "Buu Majin",
@@ -117,8 +161,9 @@ mechants = [
         "actions": ["Candy Beam"],
         "typeDegats": "magie",
         "etat": "normal",
-        "tours_etat": 0
-
+        "tours_etat": 0,
+        "degats": (4, 10),
+        "resistances": ["contondant", "tranchant", "percant", "feu"] 
     },
     {
         "nom": "Vegeta (Saiyan Saga)",
@@ -129,7 +174,9 @@ mechants = [
         "actions": ["Galick Gun"],
         "typeDegats": "foudre",
         "etat": "normal",
-        "tours_etat": 0
+        "tours_etat": 0,
+        "degats": (3, 10),
+        "resistances": ["contondant"]  
     },
     {
         "nom": "Raditz",
@@ -140,8 +187,19 @@ mechants = [
         "actions": ["Saturday Crush"],
         "typeDegats": "foudre",
         "etat": "normal",
-        "tours_etat": 0
+        "tours_etat": 0,
+        "degats": (2, 8),
+        "resistances": ["contondant"]  
     },
+]
+armes = [
+    "Épée de Trunks",
+    "Bâton Magique de Goku",
+    "Destructo Disk",
+    "Bâton de Piccolo",
+    "Épée de Gohan",
+    "Queue Saiyan",
+    "Ceinture lestée de Goku"
 ]
 
 etats = [
@@ -150,9 +208,6 @@ etats = [
     "étourdi",
     "brûlé",
     "paralysé",
-    "rage",
-    "concentré",
-    "régénération",
     "bouclier",
     "mort"
 ]
@@ -164,6 +219,15 @@ types_degats = [
     "feu",
     "poison",
     "magique"
+]
+armes = [
+    "Épée de Trunks",        #Fais des attaques de type tranchant
+    "Bâton Magique de Goku",  #Fais des attaques de type contontant
+    "Destructo Disk",         #Fais des attaques de type perçant
+    "Antennes de Piccolo",    #Fais des attaques de type magique
+    "Queue Saiyan",           #Fais des attaques de type contondant
+    "Gants empoisonnés",      #Fais des attaques de type poison
+    "Souffle de Freezer"      #Fais des attaques de type feu
 ]
 
 nbr_de=0
@@ -178,21 +242,7 @@ def attaque_classique(attaquant, cible,jet):
     print(attaquant['nom']," attaque ",cible['nom'])
     print(f"Jet du dé : {jet}")
 
-    if jet > cible["defense"]:
-        print("L'attaque touche !")
-        nombre_des = attaquant["degats"][0]  
-        faces_des  = attaquant["degats"][1]
-        degats = lancer_des(nombre_des, faces_des)
-        cible["pv"] = cible["pv"] - degats
-        
-        print("Dégâts infligés :", degats)
-        print("PV restants de ",cible['nom'] ," : ",cible['pv'])
-
-        if cible["pv"] <= 0:
-            cible["pv"] = 0
-            cible["etat"] = "mort"
-            print(cible['nom'] ," est mort !")
-    elif jet==20:
+    if jet==20:
         print("Attaque critique!")
         nombre_des = attaquant["degats"][0]  
         faces_des  = attaquant["degats"][1]
@@ -210,9 +260,48 @@ def attaque_classique(attaquant, cible,jet):
         
         print("Dégâts infligés :", degats)
         print("PV restants de ",attaquant['nom'] ," : ",attaquant['pv'])
+    elif jet > cible["defense"]:
+        print("L'attaque touche !")
+        nombre_des = attaquant["degats"][0]  
+        faces_des  = attaquant["degats"][1]
+        degats = lancer_des(nombre_des, faces_des)
+        cible["pv"] = cible["pv"] - degats
+        
+        print("Dégâts infligés :", degats)
+        print("PV restants de ",cible['nom'] ," : ",cible['pv'])
+
+        if cible["pv"] <= 0:
+            cible["pv"] = 0
+            cible["etat"] = "mort"
+            print(cible['nom'] ," est mort !")
+    else:
+        print("L'attaque échoue.")
+
+def attaque_tranchant(attaquant,cible,jet):
+    if jet > cible["defense"]:
+        print("Attaque Tranchant!")
+        print(f"Jet du dé : {jet}")
+        nombre_des = attaquant["degats"][0]  
+        faces_des  = attaquant["degats"][1]
+        degats = lancer_des(nombre_des, faces_des) 
+        if "tranchant" in cible["resistances"]:
+            cible["pv"] = cible["pv"] - degats
+            
+            print("Dégâts infligés :", degats)
+            print("PV restants de ",cible['nom'] ," : ",cible['pv'])
+        else:
+            degats = lancer_des(nombre_des, faces_des) // 2
+                
+            cible["pv"] = cible["pv"] - degats
+                
+            print("Dégâts infligés :", degats)
+            print("PV restants de ",cible['nom'] ," : ",cible['pv'])
+            
+            if cible["pv"]<=0:
+                print(cible['nom']," est mort")
     else:
         print("L'attaque échoue.")
 
 jet=lancer_des(1,20)
-
-attaque_classique(heros[0],mechants[0],jet)
+print(jet)
+attaque_tranchant(heros[1],mechants[1],jet)
