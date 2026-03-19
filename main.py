@@ -5,6 +5,7 @@ heros = [
         "nom": "Goku",
         "description": "Guerrier Saiyan légendaire, défenseur de la Terre aux pouvoirs infinis.",
         "pv": 500,
+        "pv_max": 500,
         "defense": 20,
         "initiative": 22,
         "actions": ["Kamehameha"],
@@ -12,15 +13,18 @@ heros = [
         "etat": "normal",
         "tours_etat": 0,
         "degats": (3, 10),
-        "resistances": ["contondant"],
+        "arme": None,
+        "inventaire": [],
         "peut_fusionner": True,
+        "fusion_avec": "Vegeta",
         "Carte": None
-
+    
     },
     {
         "nom": "Gohan",
         "description": "Fils de Goku, demi-Saiyan au potentiel caché qui surpasse son père.",
         "pv": 420,
+        "pv_max": 420,
         "defense": 18,
         "initiative": 19,
         "actions": ["Kamehameha"],
@@ -28,7 +32,8 @@ heros = [
         "etat": "normal",
         "tours_etat": 0,
         "degats": (2, 10),
-        "resistances": ["contondant"],
+        "arme": None,
+        "inventaire": [],
         "peut_fusionner": False,
         "Carte": None
 
@@ -37,6 +42,7 @@ heros = [
         "nom": "Vegeta",
         "description": "Prince des Saiyans, rival éternel de Goku, fier guerrier d'élite.",
         "pv": 480,
+        "pv_max": 480,
         "defense": 19,
         "initiative": 20,
         "actions": ["Final Flash"],
@@ -44,8 +50,10 @@ heros = [
         "etat": "normal",
         "tours_etat": 0,
         "degats": (3, 10),
-        "resistances": ["contondant", "tranchant"]  ,
+        "arme": None,
+        "inventaire": [],
         "peut_fusionner": True,
+        "fusion_avec": "Goku",
         "Carte": None
 
     },
@@ -54,6 +62,7 @@ heros = [
         "nom": "Trunks",
         "description": "Guerrier du futur, fils de Vegeta, porteur de l'épée légendaire.",
         "pv": 350,
+        "pv_max": 350,
         "defense": 17,
         "initiative": 18,
         "actions": ["Final Flash"],
@@ -61,8 +70,10 @@ heros = [
         "etat": "normal",
         "tours_etat": 0,
         "degats": (3, 10),
-        "resistances": ["contondant", "tranchant"],
+        "arme": None,
+        "inventaire": [],
         "peut_fusionner": True,
+        "fusion_avec": "Goten",
         "Carte": None
   
     },
@@ -70,6 +81,7 @@ heros = [
         "nom": "Goten",
         "description": "Fils cadet de Goku, prodige Saiyan et meilleur ami de Trunks.",
         "pv": 320,
+        "pv_max": 320,
         "defense": 15,
         "initiative": 17,
         "actions": ["Kamehameha"],
@@ -77,10 +89,12 @@ heros = [
         "etat": "normal",
         "tours_etat": 0,
         "degats": (2, 10),
-        "resistances": ["contondant"],
         "peut_fusionner": True,
         "partenaire_fusion": "Trunks",
+        "arme": None,
+        "inventaire": [],
         "peut_fusionner": True,
+        "fusion_avec": "Trunks",
         "Carte": None
 
     },
@@ -89,6 +103,7 @@ heros = [
         "nom": "Krilin",
         "description": "Meilleur ami humain de Goku, maître du Destructo Disk et du Kamehameha.",
         "pv": 180,
+        "pv_max": 180,
         "defense": 13,
         "initiative": 16,
         "actions": ["Destructo Disk"],
@@ -96,40 +111,45 @@ heros = [
         "etat": "normal",
         "tours_etat": 0,
         "degats": (2, 6),
-        "resistances": [] ,
+        "arme": None,
+        "inventaire": [],
         "peut_fusionner": False,
         "Carte": None
  
     },
     {
-    "nom": "Gotenks",
-    "description": "Fusion légendaire de Trunks et Goten, puissance démultipliée et caractère imprévisible.",
-    "pv": 620,        
-    "defense":22,   
-    "initiative": 21, 
-    "actions": ["Kamehameha Jr"],
-    "typeDegats": "foudre",
-    "etat": "normal",
-    "tours_etat": 0,
-    "degats": (4, 12),            
-    "resistances": ["contondant", "tranchant"],
-    "peut_fusionner": False,
-    "duree_fusion": 5             
+        "nom": "Gotenks",
+        "description": "Fusion légendaire de Trunks et Goten, puissance démultipliée et caractère imprévisible.",
+        "pv": 620,        
+        "pv_max": 620,        
+        "defense":22,   
+        "initiative": 21, 
+        "actions": ["Kamehameha Jr"],
+        "typeDegats": "foudre",
+        "etat": "normal",
+        "tours_etat": 0,
+        "degats": (4, 12),            
+        "arme": None,
+        "inventaire": [],
+        "peut_fusionner": False,
+        "duree_fusion": 5             
     },
     {
-    "nom": "Gogeta",
-    "description": "Fusion parfaite de Goku et Vegeta par la danse de fusion, la plus puissante jamais vue.",
-    "pv": 500 + 480 + 300,
-    "defense": max(20, 19) + 8,
-    "initiative": max(22, 20) + 5,
-    "actions": ["Big Bang Kamehameha"],
-    "typeDegats": "foudre",
-    "etat": "normal",
-    "tours_etat": 0,
-    "degats": (5, 12),
-    "resistances": ["contondant", "tranchant", "magique"],
-    "peut_fusionner": False,
-    "duree_fusion": 5
+        "nom": "Gogeta",
+        "description": "Fusion parfaite de Goku et Vegeta par la danse de fusion, la plus puissante jamais vue.",
+        "pv": 1280,
+        "pv_max": 1280,
+        "defense": 28,
+        "initiative":  27,
+        "actions": ["Big Bang Kamehameha"],
+        "typeDegats": "foudre",
+        "etat": "normal",
+        "tours_etat": 0,
+        "degats": (5, 12),
+        "arme": None,
+        "inventaire": [],
+        "peut_fusionner": False,
+        "duree_fusion": 5
 }
 ]
 
@@ -138,6 +158,7 @@ mechants = [
         "nom": "Broly",
         "description": "Saiyan légendaire à la puissance incontrôlable, destructor de planètes.",
         "pv": 600,
+        "pv_max": 600,
         "defense": 18,
         "initiative": 14,
         "actions": ["Eraser Cannon"],
@@ -151,6 +172,7 @@ mechants = [
         "nom": "Freezer",
         "description": "Empereur galactique tyrannique, destructeur de la planète Vegeta.",
         "pv": 520,
+        "pv_max": 520,
         "defense": 10,
         "initiative": 18,
         "actions": ["Death Beam"],
@@ -164,6 +186,7 @@ mechants = [
         "nom": "Cell",
         "description": "Androïde parfait créé par le Dr Gero, absorbeur de puissance.",
         "pv": 450,
+        "pv_max": 450,
         "defense": 19,
         "initiative": 17,
         "actions": ["Kamehameha Solaire"],
@@ -177,6 +200,7 @@ mechants = [
         "nom": "Buu Majin",
         "description": "Créature magique antique à la régénération infinie et à la puissance absurde.",
         "pv": 700,
+        "pv_max": 700,
         "defense": 15,
         "initiative": 12,
         "actions": ["Candy Beam"],
@@ -191,6 +215,7 @@ mechants = [
         "nom": "Raditz",
         "description": "Frère aîné de Goku, premier ennemi Saiyan à menacer la Terre.",
         "pv": 220,
+        "pv_max": 220,
         "defense": 14,
         "initiative": 15,
         "actions": ["Saturday Crush"],
@@ -204,6 +229,7 @@ mechants = [
     "nom": "Janemba",
     "description": "Démon né de l'énergie maléfique des enfers, capable de déformer la réalité.",
     "pv": 620,
+    "pv_max": 620,
     "defense": 19,
     "initiative": 16,
     "actions": ["Dimension Sword"],
@@ -217,6 +243,7 @@ mechants = [
     "nom": "Cooler",
     "description": "Frère aîné de Freezer, plus froid et plus impitoyable, doté d'une forme finale terrifiante.",
     "pv": 540,
+    "pv_max": 540,
     "defense": 21,
     "initiative": 19,
     "actions": ["Supernova de Cooler"],
@@ -230,6 +257,7 @@ mechants = [
     "nom": "Zamatsu",
     "description": "Dieu Kaïo devenu immortel, convaincu que les mortels doivent être anéantis.",
     "pv": 700,
+    "pv_max": 700,
     "defense": 23,
     "initiative": 18,
     "actions": ["Tranche Sainte"],
@@ -243,11 +271,13 @@ mechants = [
 
 etats = [
     "normal",
-    "empoisonné",
-    "étourdi",
-    "brûlé",
-    "paralysé",
-    "bouclier",
+    "empoisonné",#Lorsqu'il subit des dégats de poison
+    "saigne",#Lorsqu'il subit des dégats tranchant
+    "étourdi",#Lorsqu'il subit des dégats contondant
+    "brûlé",#Lorsqu'il subit des dégats de feu
+    "paralysé",#Lorsqu'il subit des dégats perçant
+    "Boosté"
+    "Affaibli"
     "mort"
 ]
 
@@ -257,7 +287,7 @@ types_degats = [
     "perçant",
     "feu",
     "poison",
-    "magique"
+    
 ]
 
 armes = [
@@ -269,18 +299,22 @@ armes = [
     "Souffle de Freezer"      #Fais des attaques de type feu
 ]
 
-class Creature:
-    def __init__(self, nom, description, pv, pv_max , defense, initiative_base, degat, type_degat):
+class Creature():
+    
+    def __init__(self, nom, description, pv, pv_max, defense, initiative, degats, typeDegats, actions, etat, tours_etat, peut_fusionner, Carte):
         self.nom = nom
         self.description = description
         self.pv = pv
-        self.pv_max = pv_max
+        self.pv_max = pv_max        
         self.defense = defense
-        self.initiative_base = initiative_base
-        self.degat = degat
-        self.type_degat = type_degat
-        self.actions = []
-        self.etats = []
+        self.initiative_base = initiative
+        self.degats = degats
+        self.type_degat = typeDegats
+        self.actions = actions
+        self.etat = etat
+        self.tours_etat = tours_etat
+        self.peut_fusionner = peut_fusionner
+        self.carte = Carte
 
     def lancer_initiative(self):
 
@@ -289,36 +323,72 @@ class Creature:
         return resultat
 
     def afficher_actions(self):
-        print(f"Actions de {self.nom} : {', '.join([a.nom for a in self.actions]) if self.actions else 'Aucune'}")
+        if self.actions:
+            print(f"Actions de {self.nom} :") 
+            for action in self.actions:
+                print(f"  --> {action}")
+        else:
+            print(f"{self.nom} n'a aucune action disponible.")
 
-    def afficher_caracteristiques(self):
+    def afficher_caracteristiques(self):#Demander au profs quels sont les caractéristiques qu'on doit afficher 
         print(f"--- {self.nom} ({self.type_degat}) ---")
-        print(f"PV: {self.pv} | CA: {self.defense}")
+        print(f"PV: {self.pv} | Défense: {self.defense}")
         print(f"Description: {self.description}")
-
+    
     def attaque(self, cible):
-        print(f"{self.nom} attaque {cible.nom} et inflige {self.degat} dégâts ({self.type_degat}) !")
-        cible.pv -= self.degat
-        
-class heros(Creature):
+        jet = random.randint(1,20)
+        print("Jet d'attaque :", jet)
+        print(f"{self.nom} attaque {cible.nom} et inflige {self.degats} dégâts ({self.type_degats}) !")
+
+        if jet == 1:
+             print("Echec critique !")
+             degats_infli = lancer_des(self.nb_des, self.faces)
+             self.pv -= degats_infli
+             print(self.nom, "se blesse de", degats_infli)
+             return
+        if jet >= cible.defense:
+             degats = lancer_des(self.nb_des, self.faces)
+             if jet == 20:
+                print("Coup critique !")
+                degats = 2
+                print("L'attaque touche")
+        else: 
+             print("L'attaque rate")
+             return
+        if hasattr(cible, "resistances") and self.type_degats in cible.resistances:
+             print(cible.nom, "résiste au type", self.type_degats)
+             degats //= 2
+        if hasattr(cible, "faiblesses") and self.type_degats in cible.faiblesses:
+             print(cible.nom, "est faible contre", self.type_degats)
+             degats= 2
+        cible.pv -= degats
+        print("Degats infligés :", degats)
+        print(cible.nom, "PV restant :", cible.pv)
+
+class heros(Creature):#A modifier les classes s'ecrivent toujours en majuscules
             
-            def __init__(self, nom, description, pv, defense, initiative_base, degat, type_degat, arme):
+            def __init__(self, nom, description, pv, defense, initiative_base, degat, type_degat, arme,inventaire):
                 super().__init__(nom, description, pv, defense, initiative_base, degat, type_degat)
                 self.arme = arme
-                self.inventaire = []
+                self.inventaire = inventaire
 
             def afficher_caracteristiques(self):
              super().afficher_caracteristiques()
              print(f"Arme : {self.arme} | Inventaire : {len(self.inventaire)} objets")
 
-class mechants(Creature):
+class mechants(Creature):#A modifier les classes s'ecrivent toujours en majuscules
     def __init__(self, nom, description, pv, defense, initiative_base, degat, type_degat):
         super().__init__(nom, description, pv, defense, initiative_base, degat, type_degat)
         self.resistances = []
 
     def afficher_caracteristiques(self):
         super().afficher_caracteristiques()
-        print(f"Résistances : {', '.join(self.resistances) if self.resistances else 'Aucune'}")
+        if self.resistances:
+            print("Résistances :")
+            for resistance in self.resistances:
+                print(f"  - {resistance}")
+        else:
+            print("Résistances : Aucune")
 
 class Action:
             def __init__(self, nom, lanceur, cible):
@@ -329,17 +399,12 @@ class Action:
             def executer(self):
              print(f"L'action {self.nom} est lancée par {self.lanceur.nom} sur {self.cible.nom} !")
 
-# Classe pour gérer le soin, qui hérite des caractéristiques de la classe Action
-class Soin(Action):#Aricot magique
+class Soin(Action):  # Haricot magique
     def executer(self):
-        super().executer() 
-        montant_du_soin = random.randint(5, 15)
-        self.cible.pv = self.cible.pv + montant_du_soin
-        if self.cible.pv > self.cible.pv_max:
-            self.cible.pv = self.cible.pv_max
-        print("Aricot magique mangé. " + self.cible.nom + " a maintenant " + str(self.cible.pv) + " PV.")
+        super().executer()
+        self.cible.pv = self.cible.pv_max  
+        print(f"{self.cible.nom} a mangé un haricot magique et récupère tous ses PV ({self.cible.pv_max} PV) !")# faire de tels sorte que lorsquon donne un haricot magique a son coequipier , que la phrase change .
 
-# Classe pour gérer les améliorations, qui hérite aussi de la classe Action
 class Buff(Action):
     def executer(self):
         super().executer()
@@ -364,7 +429,7 @@ def lancer_des(nombre, faces):
         total += random.randint(1, faces)
     return total
 
-def attaque_classique(attaquant, cible,jet):
+def Attaque_classique(attaquant, cible,jet):
     print(attaquant['nom']," attaque ",cible['nom'])
     print(f"Jet du dé : {jet}")
 
@@ -398,12 +463,12 @@ def attaque_classique(attaquant, cible,jet):
 
         if cible["pv"] <= 0:
             cible["pv"] = 0
-            cible["etat"] = "mort"
+            cible["etat"] = "mort"#pk pas l'enlever et appeler la fonction verifier_mort
             print(cible['nom'] ," est mort !")
     else:
         print("L'attaque échoue.")
 
-def attaque_tranchant(attaquant,cible,jet):
+def Attaque_tranchant(attaquant,cible,jet):
     if jet > cible["defense"]:
         print("Attaque Tranchant!")
         print(f"Jet du dé : {jet}")
@@ -428,7 +493,7 @@ def attaque_tranchant(attaquant,cible,jet):
     else:
         print("L'attaque échoue.")
 
-def creer_equipe(liste_source, est_heros):
+def Creer_equipe(liste_source, est_heros):
     """Gère la sélection visuelle des personnages dans le terminal."""
     equipe_finale = []
     
@@ -467,10 +532,53 @@ def creer_equipe(liste_source, est_heros):
 
     return equipe_finale
 
+def Fusions(heros_1, heros_2,equipe):
+    if heros_1["peut_fusionner"] and heros_2["peut_fusionner"]:
+        if heros_1["fusion_avec"] == heros_2["nom"] and heros_2["fusion_avec"] == heros_1["nom"]:
+            nom_fusion = None
+            if heros_1["nom"] == "Goku" or heros_1["nom"] == "Vegeta":
+                nom_fusion = "Gogeta"
+            elif heros_1["nom"] == "Trunks" or heros_1["nom"] == "Goten":
+                nom_fusion = "Gotenks"
+            
+            fusion=None
+            for i in heros:
+                if i["nom"] == nom_fusion:
+                    fusion = i
+                    break
+            
+            if fusion is None:
+                print(f"Fusion introuvable dans la database. Vérifie les noms !")
+                return None
+ 
+            equipe.remove(heros_1)
+            equipe.remove(heros_2)
+            equipe.append(fusion)
+            print("FUUUUUUUUUUSION YAA!!!!!")
+            print(f"{fusion['nom']} a rejoint l'équipe !")
+            fusion["inventaire"].append( heros_1["inventaire"])
+            fusion["inventaire"].append( heros_2["inventaire"])
+        else:
+            print(f"{heros_1["nom"]} et {heros_2["nom"]} ne peuvent pas fusionner ensemble! ")
+    else:
+        print("Ses personnages ne peuvent pas fusionner ensemble!")
+        return None    
+ 
+def verifier_mort(hero,equipe):
+    if  hero["pv"] >= 0:
+        hero["pv"] = 0
+        hero["etat"] = "mort"
+        hero["carte"] = 7     
+        equipe.remove(hero)
+        print(f"{hero["nom"] }est mort et a laissé les boules de cristalles sur le terrain.")
+
+def creer_equipe():
+    print("hello world")
+
 def lancer_jeu():
     """Fonction principale de ton interface de combat."""
     print("")
-    print(" >>>  BIENVENUE DANS FATE OF THE ARENA  <<< ")
+    print(" >>>  BIENVENUE DANS FATE OF THE ARENA 🐉 <<< ")
     print(" Note : PV = Points de Vie (la santé de vos guerriers) ")
     print("")
 
@@ -515,6 +623,7 @@ def lancer_jeu():
             combat_en_cours = False
             print("\n >>>  TERMINE  <<<")
             print("L'équipe des Méchants a gagné !" if pv_heros <= 0 else "L'équipe des Héros a gagné !")
+
 
 
 if __name__ == "__main__":
