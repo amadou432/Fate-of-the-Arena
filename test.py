@@ -105,78 +105,6 @@ def Fusions(heros_1, heros_2,equipe):
         print("Ses personnages ne peuvent pas fusionner ensemble!")
         return None    
    
-from main import Soin, Buff, Debuff
-def boucle_combat(heros, monstres):
-    creatures = []
-    creatures.append(heros)
-    creatures.append(monstres)
-    print("Initiative")
-    ordre = sorted(creatures, key=lambda c: c.lancer_initiative(), reverse=True)
-    print("orde de jeu :")
-    for c in ordre:
-        print("-", c.nom)
-
-    while True:
-        for joueur in ordre:
-            if joueur.pv <= 0:
-                continue
-            print("Tour de", joueur.nom)
-            if joueur in heros:
-                print("1-Attaquer")
-                print("2-Magie")
-                print("3-Objets")
-                print("4-Competence spécial")
-
-                choix = int(input("Choix : "))
-                if choix == 1:
-                    for i, m in enumerate(monstres):
-                        print(i, "-", m.nom, "PV:", m.pv)
-                    cible = int(input("Cible : "))
-                    if 0 <= cible < len(monstres):
-                        joueur.attaque(monstres[cible])
-                    else:
-                        print("Cible invalide")    
-                elif choix == 2:
-                    print("1-Magie de soin")
-                    print("2-Magie de renforcement")
-                    print("3-Debuff")
-                    choix_sort = int(input("Choix du sort :"))
-                    if choix_sort == 1:
-                        action = Soin("Soin", joueur, joueur)
-                        action.executer()
-                    elif choix_sort == 2:
-                        action = Buff("Buff", joueur, joueur)
-                        action.executer()
-                    else:
-                        for i, m in enumerate(monstres):
-                            print(i, "-", m.nom)
-                        cible = int(input("Cible : "))
-                        if 0 <= cible <= len(monstres):
-                            action = Debuff("Debuff", joueur, monstres[cible])
-                            action.executer()   
-                        else:
-                            print("Cible invalide")       
-
-                elif choix == 3:  
-                    action = Soin("Potion de soin", joueur, joueur)
-                    action.executer()
-                elif choix == 4:
-                    print("Competences spe pas encore codée")    
-            else:
-                cible = heros[0]
-                while cible.pv <= 0:
-                    cible = heros[heros.index(cible)+1]
-                print(joueur.nom, "attaque", cible.nom)
-                joueur.attaque(cible)
-            monstres[:] = [m for m in monstres if m.pv > 0]
-            heros[:] = [h for h in heros if h.pv > 0]
-
-            if len(monstres) == 0:
-                print("Victoire !, Les héros ont gagnés !")
-                return
-            if len(heros) == 0:
-                print("Défaite, les monstres ont gagnés...")
-                return
 
 # heros = [
 #     {
@@ -410,15 +338,10 @@ equipe = [
 
 for i in equipe:
     print(i["nom"])
-
-joueur_1["inventaire"] = "épée"
-joueur_3["inventaire"] = "poison"
+    print(i["pv"])
 
 Fusions(joueur_1 , joueur_3, equipe)
 
 for i in equipe:
     print(i["nom"])
     print(i["pv"])
-    print(i["inventaire"])
-
-boucle_combat(heros[0],mechants[0])
